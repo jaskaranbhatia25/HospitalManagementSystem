@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <link rel="shortcut icon" type="image/x-icon" href="/img/hms.png">
+    <title>HMS</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+
+</head>
+
+<body>
+
+  
+    <div class="main-wrapper">
+        <div class="header">
+			<div class="header-left">
+				<a href="/home" class="logo">
+					<img src="/img/hms.png" width="52%" height="52%" alt="hms">
+				</a>
+			</div>
+			<a id="toggle_btn" href="javascript:void(0);"><i class="fa fa-bars" aria-hidden="true"></i></a>
+            <a id="mobile_btn" class="mobile_btn float-left" href="#sidebar"><i class="fa fa-bars" aria-hidden="true"></i></a>
+            <ul class="nav user-menu float-right">
+                
+                <li class="nav-item dropdown has-arrow">
+                    <a href="#" class="dropdown-toggle nav-link user-link" data-toggle="dropdown">
+                        <span class="user-img">
+							<img class="rounded-circle" src="/assets/img/user.jpg" width="24" alt="Admin">
+							<span class="status online"></span>
+						</span>
+						<span>Profile</span>
+                    </a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="/home/profile">My Profile</a>
+						
+						<a class="dropdown-item" href="/logout">Logout</a>
+					</div>
+                </li>
+            </ul>
+
+            <!-- /for mobile users -->
+            <div class="dropdown mobile-user-menu float-right">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="/home/profile">My Profile</a>
+                    
+                    <a class="dropdown-item" href="/logout">Logout</a>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-inner slimscroll">
+                <div id="sidebar-menu" class="sidebar-menu">
+                    <ul>
+                        <li>
+                            <a href="/home"><i class="fa fa-home" aria-hidden="true"></i> <span>HomePage</span></a>
+                        </li>
+                        <li class="submenu">
+                            <a href="#"><i class="fa fa-user-md"></i> <span> Doctors </span> <span
+                                    class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a href="/doctors"> Doctors </a></li>
+                                <li class="active"><a href="/absence"> Doctor's Leave </a></li>
+                            </ul>
+
+                        </li>
+
+
+                        <li>
+                            <a href="/administrator"><i class="fa fa-user" aria-hidden="true"></i>
+                                <span>Administrator</span></a>
+                        </li>
+                        <li>
+                            <a href="/patients"><i class="fa fa-users" aria-hidden="true"></i> <span>Patients</span></a>
+                        </li>
+                        <li>
+                            <a href="/appointment"><i class="fa fa-calendar" aria-hidden="true"></i>
+                                <span>Appointments</span></a>
+                        </li>
+
+                        <li>
+                            <a href="/salary"><i class="fa fa-money" aria-hidden="true"></i> <span>Salary</span></a>
+                        <li>
+
+                        <li>
+                            <a href="/operation"><i class="fa fa-stethoscope" aria-hidden="true"></i>
+                                <span>Operation</span></a>
+                        </li>
+                        <li>
+                            <a href="/materials"><i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                                <span>Materials Used</span></a>
+                        </li>
+
+                        <li>
+                            <a href="/medical_record"><i class="fa fa-medkit"></i> <span>Medical Records</span></a>
+                        </li>
+                        <li>
+                            <a href="/lab_test"><i class="fa fa-flask" aria-hidden="true"></i><span>Tests</span></a>
+                        </li>
+                        <li>
+                            <a href="/cases"><i class="fa fa-briefcase" aria-hidden="true"></i><span>Cases</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="page-wrapper">
+            <div class="content">
+                <div class="row">
+                    <div class="col-sm-8 col-6">
+                        <h4 class="page-title">Absence Request page</h4>
+                    </div>
+                    <div class="col-sm-4 col-6 text-right m-b-30">
+                        <a href="/absence/add_absence" class="btn btn-primary btn-rounded float-right"><i class="fa fa-plus"></i> Add Leave</a>
+                    </div>
+                    <form action="" method="POST">
+                        <div class="col-sm-6 col-md-12">
+                            <div class="form-group form-focus">
+                                <label class="focus-label" height=""></label>
+                                <input type="text" class="form-control floating" name="search" placeholder="Search doctor's id" >
+                                <button formaction="/absence/search" type="submit" class="btn btn-info"><i class="fa fa-search">Search</i></button>
+                            </div>
+                        
+                        </div>
+                    </form>
+                </div>
+               
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table class="table table-striped custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>Leave Id</th>
+                                        <th>Doctor ID</th>
+                                        <th>Start time</th>
+                                        <th>End time</th>
+                                        
+                                        <th>Form</th>
+                                        
+                                        <th class="text-right">More</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% for (var i = 0; i < user.length; i++){ %>
+                                    <tr>
+                                        <td>
+                                            <%= user[i].leave_id %>
+                                        </td>
+                                        <td><%= user[i].d_id %></td>
+                                        <td><%= user[i].starttime %></td>
+                                        <td><%= user[i].endtime %></td>
+                                        <td><%= user[i].form %></td>
+                                        
+                                        <td class="text-right">
+                                            <div class="dropdown dropdown-action">
+                                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item" href="/absence/edit_absence/<%= user[i].leave_id%>"><i class="fa fa-pencil m-r-5"></i> Edit</a>
+                                                    <a class="dropdown-item" href="/absence/delete_absence/<%= user[i].leave_id%>" ><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <% } %>
+                                    </tr>
+                                   
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+    </div>
+    <div class="sidebar-overlay" data-reff=""></div>
+    <script src="/assets/js/jquery-3.2.1.min.js"></script>
+	<script src="/assets/js/popper.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/jquery.dataTables.min.js"></script>
+    <script src="/assets/js/dataTables.bootstrap4.min.js"></script>
+    <script src="/assets/js/jquery.slimscroll.js"></script>
+    <script src="/assets/js/select2.min.js"></script>
+    <script src="/assets/js/moment.min.js"></script>
+    <script src="/assets/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="/assets/js/app.js"></script>
+</body>
+
+</html>

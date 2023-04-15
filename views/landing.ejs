@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+   
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>HMS</title>
+    <link rel="icon" href="img/hms.png">
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+   
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    
+    <link rel="stylesheet" href="css/themify-icons.css">
+   
+    <link rel="stylesheet" href="css/flaticon.css">
+    
+    <link rel="stylesheet" href="css/magnific-popup.css">
+   
+    <link rel="stylesheet" href="css/nice-select.css">
+   
+    <link rel="stylesheet" href="css/slick.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="main_menu home_menu">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <a class="navbar-brand" href="#"> <img src="img/hms.png" alt="logo" width="67%" height="69%"> </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse main-menu-item justify-content-center"
+                            id="navbarSupportedContent">
+                            <ul class="navbar-nav align-items-center">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#land">Home</a>
+                                    <div class="dropdown-menu" aria-labelledby="nav-l"> 
+                                      <a class="dropdown-item" href="#clinic">Clinic Hours/Address</a>
+                                      <a class="dropdown-item" href="#news">Newsletter Signup</a>
+                                  </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#abt">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#doc">Doctors</a>
+                                </li>
+
+                                
+
+                                
+
+                                <li class="nav-item dropdown">
+                                  <a class="nav-link dropdown-toggle" href="">Sign Up</a>
+                                  <div class="dropdown-menu" aria-labelledby="nav-l"> 
+                                    <a class="dropdown-item" href="/signup_patient">Patient</a>
+                                    <a class="dropdown-item" href="/signup_doctor">Doctor</a>
+                                    <a class="dropdown-item" href="/signup_admin">Admin</a>
+                                </div>
+                              </li>
+
+                              <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="" id="nav-l">Log In</a>
+                                <div class="dropdown-menu" aria-labelledby="nav-l"> 
+                                    <a class="dropdown-item" href="/patient_login">Patient</a>
+                                    <a class="dropdown-item" href="/doctor_login">Doctor</a>
+                                    <a class="dropdown-item" href="/admin_login">Admin</a>
+                                </div>
+                            </li>
+
+                            </ul>
+                        </div>
+                        
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    
+  
+    <section class="banner_part" id="land">
+        <div class="container" >
+            <div class="row align-items-center">
+                <div class="col-lg-5 col-xl-5">
+                    <div class="banner_text">
+                        <div class="banner_text_iner">
+                            <h2>Get best hospitality here</h2>
+                            
+                            <p>To make an appointment, click the link below and signup!</p>
+                            <a href="/signup_patient" class="btn_2">Signup and Make an appointment!</a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="banner_img">
+                        <img src="img/hosp1.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="about_us padding_top mb-6" id="abt">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-md-12 col-lg-11">
+                    <div class="about_us_text" >
+                        <h2>About us</h2>
+                        <p> We are creating a hospital management system that will provide the best services to patients,
+                             doctors and administrators and will be able to manage the hospital in a better way.
+                        </p> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+
+    
+
+    <section class="doctor_part section_padding mt-5" id="doc">
+        <div class="container">
+            <div class="row justify-content-left">
+                <div class="col-xl-8">
+                    <div class="section_tittle text-left" >
+                        <h2> Our top-ranked doctors</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+            
+
+                <% doctors.forEach(function(doctor) { %>
+                    <div class="col-sm-5 col-lg-3">
+                        <div class="single_blog_item">
+                            <div class="single_blog_img">
+                                <img src="/assets/img/user.jpg %>" alt="doctor">
+                            </div>
+                            <div class="single_text">
+                                <div class="single_blog_text">
+                                    <h3><%= doctor.first_name %></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% }); %>
+                
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="section_padding" id="clinic">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 col-xl-5">
+                    <div class="banner_text">
+                        <div class="banner_text_iner">
+                            <h3>Clinic Operation Timings:</h3>
+                            
+                            <p>8 am - 8pm : Everyday <span>(Holiday's timings may differ)</span></p>
+                            
+                            <h3>
+                                Clinic Address:
+                            </h3>
+                            <p> 123, ABC Street, Calgary, AB</p>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <footer class="footer-area" id="news">
+        <div class="footer section_padding">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-xl-6 col-md-10 col-sm-10 single-footer-widget">
+                        <h4>Newsletter</h4>
+                        <div class="col-xl-12 col-sm-10 col-md-10 single-footer-widget">
+                        <p>Stay update with our latest</p>
+                        <p>Enter your email address to join our newsletter!</p>
+                        </div>
+                        <div class="form-wrap" id="mc_embed_signup">
+                            <form target="_blank"
+                                action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+                                method="get" class="form-inline">
+                                <input class="form-control" name="EMAIL" placeholder="Your Email Address"
+                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '"
+                                    required="" type="email">
+                                <button class="click-btn btn btn-default text-uppercase"> <i class="ti-angle-right"></i>
+                                </button>
+                                <div style="position: absolute; left: -5000px;">
+                                    <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value=""
+                                        type="text">
+                                </div>
+
+                                <div class="info"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright_part">
+            <div class="container">
+                <div class="row align-items-center">
+                    <p class="footer-text m-0 col-lg-8 col-md-12"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy; 2023 All rights reserved | This template is referenced from Colorlib</a>
+
+</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+  
+    <!-- bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- owl carousel js -->
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <!-- contact js -->
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/mail-script.js"></script>
+    <script src="js/contact.js"></script>
+    <!-- custom js -->
+    <script src="js/custom.js"></script>
+</body>
+
+</html>
